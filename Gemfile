@@ -31,8 +31,7 @@ gem 'devise'
 gem 'react-rails'
 # Jquery
 gem 'jquery-rails'
-# Bootstrap
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+
 
 
 # Use Redis adapter to run Action Cable in production
