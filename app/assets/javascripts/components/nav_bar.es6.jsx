@@ -18,7 +18,6 @@ class NavBar extends React.Component {
           }
 
       ];
-      console.log(this.props.user_signed_in);
       let sign_actions = null;
       if (this.props.user)
           sign_actions = <a className="navbar-brand" href="users/sign_out" data-method="delete" rel="nofollow"> Sign Out</a>;

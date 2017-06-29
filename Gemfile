@@ -31,8 +31,8 @@ gem 'devise'
 gem 'react-rails'
 # Jquery
 gem 'jquery-rails'
-
-
+# Icons
+gem 'font-awesome-sass'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

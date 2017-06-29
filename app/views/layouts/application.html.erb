@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>ContactsApp</title>
+    <%= stylesheet_link_tag   'application', params[:controller]%>
+    <%= javascript_include_tag 'application', params[:controller] %>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -12,7 +12,8 @@
   <p class="alert"><%= alert %></p>
   -->
   <%= react_component('NavBar', {user:current_user, user_signed_in:user_signed_in?} ) %>
-
-  <%= yield %>
+  <div id="pageContent">
+    <%= yield %>
+  </div>
   </body>
 </html>

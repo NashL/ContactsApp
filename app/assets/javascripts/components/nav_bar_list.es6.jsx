@@ -8,8 +8,6 @@ class NavBarList extends React.Component {
   }
   screamingList(){
       for(i=0; i <this.state.list.length; i++){
-          console.log(this.state.list[0].props);
-          console.log(this.state.list[0].props.access);
           if(this.props.user_signed_in == this.state.list[i].props.access)
               this.state.list.splice(i,i);
       }
