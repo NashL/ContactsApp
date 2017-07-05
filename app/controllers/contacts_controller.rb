@@ -2,13 +2,16 @@ class ContactsController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_contact, only: [:edit, :show, :update, :destroy]
+  layout "contacts", only: [:index]
+  layout "application"
+
   skip_before_action :verify_authenticity_token
 
   def index
     @contacts = current_user.contacts.order(updated_at: :desc).limit(10)
     respond_to do |format|
       format.html { @contacts }
-      format.json { render json: @contacts, status: :ok}
+      format.json { render json: @contacts.as_json, status: :ok}
     end
   end
 

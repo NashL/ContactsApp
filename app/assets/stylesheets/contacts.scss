@@ -2,12 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body
+{
+  font-size:13px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 18px;
+}
+
 #pageContent{
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 #contact-table{
-  margin: 0px auto;
+
 }
 
 input[type="date"]:before {

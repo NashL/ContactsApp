@@ -23,17 +23,19 @@ class ContactList extends React.Component {
            )
         });
     return (
-        <table className="table table-responsive table-hover" id="contact-table">
-            <thead className="bg-info">
+        <table className="table table-striped table-hover table-responsive table-sm ">
+            <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th className="hidden-xs-down">Email</th>
                     <th>Phone</th>
-                    <th>Address</th>
-                    <th>Company</th>
-                    <th>Birthday</th>
-                    <th>Edit</th>
+                    <th className="hidden-md-down">Address</th>
+                    <th className="hidden-md-down">Company</th>
+                    <th className="hidden-md-down">Birthday</th>
+                    <th className="hidden-md-down">Age</th>
+                    <th className="hidden-xs-down">Edit</th>
                     <th>Delete</th>
+                    <th>Archive</th>
                 </tr>
             </thead>
             <tbody>

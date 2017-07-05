@@ -10,3 +10,11 @@ body {
 .margin-bot{
   margin-bottom: 10px;
 }
+
+.click-able{
+  cursor: pointer;
+}
+
+.no-click-able{
+  cursor: default;
+}
