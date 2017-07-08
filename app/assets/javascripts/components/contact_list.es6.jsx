@@ -23,7 +23,7 @@ class ContactList extends React.Component {
            )
         });
     return (
-        <table className="table table-striped table-hover table-responsive table-sm ">
+        <table className="table table-striped table-hover table-responsive">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -35,7 +35,7 @@ class ContactList extends React.Component {
                     <th className="hidden-md-down">Age</th>
                     <th className="hidden-xs-down">Edit</th>
                     <th>Delete</th>
-                    <th>Archive</th>
+                    <th clstyle={{color:'blue'}}>Archive</th>
                 </tr>
             </thead>
             <tbody>

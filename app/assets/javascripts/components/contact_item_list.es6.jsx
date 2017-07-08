@@ -60,7 +60,7 @@ class ContactItemList extends React.Component {
                     <i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </td>
-            <td className="text-center no-click-able">
+            <td className="text-center no-click-able ">
                 <button title="Archive" className="btn btn-outline-warning btn-default btn-sm click-able"
                     onClick={this.handleArchive.bind(this,contact.id)}>
                     <i className="fa fa-archive" aria-hidden="true"></i>

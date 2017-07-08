@@ -9,6 +9,39 @@ body
   line-height: 18px;
 }
 
+
+@media all and (max-width: 1366px) { /* screen size until 1000px */
+  body {
+    font-size: 1em; /* 1.2x default size */
+  }
+}
+
+@media all and (max-width: 768px) { /* screen size until 1000px */
+  body {
+    font-size: 0.95em; /* 1.2x default size */
+  }
+}
+
+@media all and (max-width: 576px) { /* screen size until 500px */
+  body {
+    font-size: 0.9em; /* 0.8x default size */
+  }
+}
+
+/*
+@media (max-width: 400px) {
+  body { font-size:90%;}
+}
+
+@media only screen and (max-width: 800px) {
+  body { font-size:100%;}
+}
+
+@media only screen and (max-width: 1100px) {
+  body { font-size:120%;}
+}
+*/
+
 #pageContent{
   margin-top: 40px;
 }

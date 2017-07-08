@@ -1,12 +1,5 @@
 class Contact < ApplicationRecord
-
   belongs_to :user
-
-  before_validation :calculate_age
-
-  def age
-    "11"
-  end
 
   def calculate_age(dob)
     if dob
@@ -24,12 +17,8 @@ class Contact < ApplicationRecord
     r[:address] = address
     r[:company] = company
     r[:bod] = bod
-    r[:age] = calculate_age(bod)
+    #r[:age] = calculate_age(bod)
     r
   end
 
-  #def c_age=(dob)
- #   now = Time.now.utc.to_date
-#    now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
-  #end
 end

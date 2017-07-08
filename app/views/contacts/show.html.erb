@@ -1,1 +1,1 @@
-<%= react_component('ContactForm', {title: 'Edit Contact', contact:@contact, method:'PUT', action:'/contacts'}) %>
+<%= react_component('ContactForm', {title: 'Edit Contact', contact:@contact.as_json, method:'PUT', action:'/contacts'}) %>
