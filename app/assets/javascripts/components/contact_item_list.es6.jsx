@@ -24,12 +24,12 @@ class ContactItemList extends React.Component {
     }
 
     handleArchive(id){
-        fetch('/contacts/' + id,{
+        fetch('/archive/' + id,{
             headers: {
                 'Content-Type': 'application/json'
             },
             credentials: 'same-origin',
-            method: 'DELETE',
+            method: 'POST',
         })
             .then(data => {
                 console.log(data);
@@ -40,7 +40,7 @@ class ContactItemList extends React.Component {
     render () {
       const contact = this.props.contact;
     return (
-        <tr className="click-able" onClick={this.handleEdit.bind(this, contact.id)}>
+        <tr>
             <td> {contact.name}</td>
             <td className="hidden-xs-down"> {contact.email}</td>
             <td> {contact.phone}</td>

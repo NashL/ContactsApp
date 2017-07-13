@@ -35,7 +35,7 @@ class ContactList extends React.Component {
                     <th className="hidden-md-down">Age</th>
                     <th className="hidden-xs-down">Edit</th>
                     <th>Delete</th>
-                    <th clstyle={{color:'blue'}}>Archive</th>
+                    <th>Archive</th>
                 </tr>
             </thead>
             <tbody>

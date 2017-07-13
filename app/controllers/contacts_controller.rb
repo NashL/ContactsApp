@@ -1,14 +1,14 @@
 class ContactsController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_contact, only: [:edit, :show, :update, :destroy]
+  before_action :set_contact, only: [:edit, :show, :update, :destroy, :archive]
   layout "contacts", only: [:index]
   layout "application"
 
   skip_before_action :verify_authenticity_token
 
   def index
-    @contacts = current_user.contacts.order(updated_at: :desc).limit(10)
+    @contacts = current_user.contacts.where(archived: false).order(updated_at: :desc).limit(10)
     respond_to do |format|
       format.html { @contacts }
       format.json { render json: @contacts.as_json, status: :ok}
@@ -24,16 +24,25 @@ class ContactsController < ApplicationController
   end
 
   def create
-    respond_with current_user.contacts.create(contacts_params)
+    @sdcontact = current_user.contacts.create(contacts_params)
+    render json: {}, status: :ok
   end
 
   def update
     contact = @contact.update_attributes(contacts_params)
-    respond_with contact, json: contact
+    render json: {}, status: :ok
   end
 
   def destroy
-    respond_with Contact.destroy(params[:id])
+    Contact.destroy(params[:id])
+    render json: {}, status: :ok
+  end
+
+  def archive
+    @contact.archived = true
+    @contact.save
+    render json: {}, status: :ok
+
   end
 
   def contacts_params

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :contacts
 
+  post "/archive/:id" => "contacts#archive", :as => :archive_contact
+
   namespace :v1 do
     resources :contacts
   end
