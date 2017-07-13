@@ -17,7 +17,7 @@ class Contact < ApplicationRecord
     r[:address] = address
     r[:company] = company
     r[:bod] = bod
-    #r[:age] = calculate_age(bod)
+    r[:age] = calculate_age(bod)
     r
   end
 

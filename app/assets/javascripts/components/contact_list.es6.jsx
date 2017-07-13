@@ -13,6 +13,7 @@ class ContactList extends React.Component {
                     return response.json()
             })
             .then((response) =>{
+                console.log(response);
                 this.setState({ contacts: response })
             })
     }
