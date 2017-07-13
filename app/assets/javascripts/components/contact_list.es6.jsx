@@ -4,7 +4,7 @@ class ContactList extends React.Component {
         this.state = {contacts: []};
     }
     componentWillMount(){
-        fetch('./contacts.json',
+        fetch(this.props.action + '.json',
             {
                 credentials: 'same-origin',
                 method: 'GET'

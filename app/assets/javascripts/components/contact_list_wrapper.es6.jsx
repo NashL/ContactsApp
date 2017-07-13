@@ -3,7 +3,7 @@ class ContactListWrapper extends React.Component {
     return (
         <div className="container-fluid">
             <a className=" margin-bot btn btn-success" href="/contacts/new" role="button">Add Contact</a>
-            <ContactList/>
+            <ContactList action={this.props.action}/>
         </div>
     );
   }

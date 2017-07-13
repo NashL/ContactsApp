@@ -24,12 +24,12 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @sdcontact = current_user.contacts.create(contacts_params)
+    current_user.contacts.create(contacts_params)
     render json: {}, status: :ok
   end
 
   def update
-    contact = @contact.update_attributes(contacts_params)
+    @contact.update_attributes(contacts_params)
     render json: {}, status: :ok
   end
 
@@ -42,7 +42,14 @@ class ContactsController < ApplicationController
     @contact.archived = true
     @contact.save
     render json: {}, status: :ok
+  end
 
+  def archived
+    @contacts = current_user.contacts.where(archived: true).order(updated_at: :desc).limit(10)
+    respond_to do |format|
+      format.html
+      format.json {render json: @contacts.as_json, status: :ok}
+    end
   end
 
   def contacts_params

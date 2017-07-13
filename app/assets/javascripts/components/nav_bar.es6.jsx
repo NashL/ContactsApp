@@ -12,6 +12,11 @@ class NavBar extends React.Component {
               acc: false
           },
           {
+              path: '/contacts/archived',
+              value: 'Archived Contacts',
+              acc: false
+          },
+          {
               path: '/about',
               value: 'About',
               acc: true

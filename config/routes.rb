@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
+  get 'contacts/archived' => 'contacts#archived'
+
   resources :contacts
 
   post "/archive/:id" => "contacts#archive", :as => :archive_contact
