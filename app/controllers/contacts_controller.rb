@@ -39,7 +39,7 @@ class ContactsController < ApplicationController
   end
 
   def archive
-    @contact.archived = true
+    @contact.archived = !@contact.archived
     @contact.save
     render json: {}, status: :ok
   end

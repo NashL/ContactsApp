@@ -2,39 +2,10 @@ class ContactItemList extends React.Component {
     constructor(props){
         super(props);
         this.handleEdit = this.handleEdit.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleEdit(id){
         window.location="/contacts/"+id;
-    }
-
-    handleDelete(id){
-        fetch('/contacts/' + id,{
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            credentials: 'same-origin',
-            method: 'DELETE',
-        })
-        .then(data => {
-            console.log(data);
-            window.location="/contacts";
-        })
-    }
-
-    handleArchive(id){
-        fetch('/archive/' + id,{
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            credentials: 'same-origin',
-            method: 'POST',
-        })
-            .then(data => {
-                console.log(data);
-                window.location="/contacts";
-            })
     }
 
     render () {
@@ -56,13 +27,13 @@ class ContactItemList extends React.Component {
             </td>
             <td className="text-center no-click-able">
                 <button title="Remove" className="btn btn-outline-danger btn-default btn-sm click-able"
-                    onClick={this.handleDelete.bind(this,contact.id)}>
+                    onClick={this.props.handleDelete.bind(this,contact.id)}>
                     <i className="fa fa-trash" aria-hidden="true"></i>
                 </button>
             </td>
             <td className="text-center no-click-able ">
                 <button title="Archive" className="btn btn-outline-warning btn-default btn-sm click-able"
-                    onClick={this.handleArchive.bind(this,contact.id)}>
+                        onClick={this.props.handleArchive.bind(this,contact.id)}>
                     <i className="fa fa-archive" aria-hidden="true"></i>
                 </button>
             </td>
