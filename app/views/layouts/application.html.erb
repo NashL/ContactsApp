@@ -8,9 +8,9 @@
   </head>
 
   <body>
-  <!--<p class="notice"><%= notice %></p>
+  <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  -->
+
   <%= react_component('NavBar', {user:current_user, user_signed_in:user_signed_in?} ) %>
   <div id="pageContent">
     <%= yield %>

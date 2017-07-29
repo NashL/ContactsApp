@@ -29,8 +29,8 @@ class NavBar extends React.Component {
       else
           sign_actions=
               <form className="form-inline">
-                  <a className="navbar-brand" href="users/sign_in" data-method="get" rel="nofollow"> Sign In</a>
-                  <a className=" navbar-brand" href="users/sign_up" data-method="get" rel="nofollow"> Sign Up</a>
+                  <a className="navbar-brand" href="/users/sign_in" data-method="get" rel="nofollow"> Sign In</a>
+                  <a className=" navbar-brand" href="/users/sign_up" data-method="get" rel="nofollow"> Sign Up</a>
               </form>;
 
     return (
