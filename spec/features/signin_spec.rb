@@ -12,18 +12,16 @@ RSpec.describe "Devise", :type => :request do
       fill_in "Email", :with => @user.email
       fill_in "Password", :with => @user.password
       fill_in "Password confirmation", :with => @user.password
-      #click_button "Sign up"
-      #expect(page).to have_text("Welcome! You have signed up successfully.")
+      click_button "Sign up"
+      have_text("A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.")
     end
 
-    it "Sign in existence User" do
-
-
-    #  visit "/users/sign_in"
-   #   fill_in "Email", :with => @user.email
-  #    fill_in "Password", :with => @user.password
- #     click_button "Log in"
-#      expect(page).to have_text("Signed in successfully.")
+    it "Sign in existence User without authenticate email" do
+      visit "/users/sign_in"
+      fill_in "Email", :with => @user.email
+      fill_in "Password", :with => @user.password
+      click_button "Log in"
+      have_text("You have to confirm your email address before continuing.")
     end
   end
 end
