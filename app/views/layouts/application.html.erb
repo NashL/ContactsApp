@@ -8,10 +8,23 @@
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <%= react_component('NavBar', {user:current_user, user_signed_in:user_signed_in?} ) %>
+
+  <div class="alerts">
+    <% if flash[:notice] %>
+        <div class="alert alert-success text-center alerts-msg">
+          <%= flash[:notice] %>
+        </div>
+    <% elsif flash[:alert] %>
+        <div class="alert alert-warning text-center alerts-msg">
+          <%= flash[:alert] %>
+        </div>
+    <% elsif flash[:error] %>
+        <div class="alert alert-danger text-center alerts-msg" style="font-family: 'Comic Sans MS'">
+          <%= flash[:error] %>
+        </div>
+    <% end %>
+  </div>
   <div id="pageContent">
     <%= yield %>
   </div>

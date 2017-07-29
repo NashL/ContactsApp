@@ -9,9 +9,21 @@
 
 <body>
 <%= react_component('NavBar', {user:current_user, user_signed_in:user_signed_in?} ) %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
+<div class="alerts">
+  <% if flash[:notice] %>
+      <div class="alert alert-success text-center alerts-msg">
+        <%= flash[:notice] %>
+      </div>
+  <% elsif flash[:alert] %>
+      <div class="alert alert-warning text-center alerts-msg">
+        <%= flash[:alert] %>
+      </div>
+  <% elsif flash[:error] %>
+      <div class="alert alert-danger text-center alerts-msg">
+        <%= flash[:error] %>
+      </div>
+  <% end %>
+</div>
 <%= yield %>
 </body>
 </html>

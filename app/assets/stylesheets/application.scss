@@ -40,3 +40,38 @@ body {
 .no-click-able{
   cursor: default;
 }
+
+#message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+#inner-message {
+  margin: 0 auto;
+}
+
+.alerts {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+}
+
+.alerts-msg {
+  position: relative;
+  left: -50%;
+}
+
+.alerts .alerts-msg {
+  -webkit-animation-name: hideit;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-delay: 4s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes hideit {
+  0% { opacity: 0; }
+  100% { opacity: 0; }
+}
